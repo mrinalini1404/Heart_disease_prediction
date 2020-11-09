@@ -1,0 +1,161 @@
+{% extends 'layout.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+      
+      
+
+      <style>
+        * {box-sizing: border-box;}
+        body {font-family: Verdana, sans-serif;}
+        .mySlides {display: none;}
+        img {vertical-align: middle;}
+        
+        /* Slideshow container */
+        .slideshow-container {
+          max-width: 1000px;
+          position: relative;
+          margin: auto;
+        }
+        
+        /* Caption text */
+        .text {
+          color: #f2f2f2;
+          font-size: 15px;
+          padding: 8px 12px;
+          position: absolute;
+          bottom: 8px;
+          width: 100%;
+          text-align: center;
+        }
+        
+        /* Number text (1/3 etc) */
+        .numbertext {
+          color: #f2f2f2;
+          font-size: 12px;
+          padding: 8px 12px;
+          position: absolute;
+          top: 0;
+        }
+        
+        /* The dots/bullets/indicators */
+        .dot {
+          height: 15px;
+          width: 15px;
+          margin: 0 2px;
+          background-color: #bbb;
+          border-radius: 50%;
+          display: inline-block;
+          transition: background-color 0.6s ease;
+        }
+        
+        .active {
+          background-color: #717171;
+        }
+        
+        /* Fading animation */
+        .fade {
+          -webkit-animation-name: fade;
+          -webkit-animation-duration: 2s;
+          animation-name: fade;
+          animation-duration: 2s;
+        }
+        
+        @-webkit-keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        @keyframes fade {
+          from {opacity: .4} 
+          to {opacity: 1}
+        }
+        
+        /* On smaller screens, decrease text size */
+        @media only screen and (max-width: 300px) {
+          .text {font-size: 11px}
+        }
+        </style>
+        
+        <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="https://static01.nyt.com/images/2018/09/25/science/25BRODYHEART/merlin_143957100_aec3ac08-454e-4e4d-a358-962465a2934e-superJumbo.jpg" style="width:100%" style="height:30%">
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="https://www.intechopen.com/media/chapter/16116/media/image2.jpeg" style="width:100%" style="height:30%">
+          <div class="text"></div>
+        </div>
+        
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQ9U3HvSvE_eK1OHgmsHskbZhfPOWjPBMon2g&usqp=CAU"  style="width:100%" style="height:30%">
+          <div class="text"></div>
+        </div>
+        <center>
+        <br>
+        <br>
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+          <span class="dot"></span> 
+         </center>
+        </div>
+                
+        <script>
+        var slideIndex = 0;
+        showSlides();
+        
+        function showSlides() {
+          var i;
+          var slides = document.getElementsByClassName("mySlides");
+          var dots = document.getElementsByClassName("dot");
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          slideIndex++;
+          if (slideIndex > slides.length) {slideIndex = 1}    
+          for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+          }
+          slides[slideIndex-1].style.display = "block";  
+          dots[slideIndex-1].className += " active";
+          setTimeout(showSlides, 3000); // Change image every 2 seconds
+        }
+        </script>
+<div>
+<h2><i class="fas fa-heartbeat"></i> Cardiovascular diseases </h2>
+<p> The term ‘cardiovascular disease’ (CVD) refers to any disease of the heart, vascular disease of the brain, or disease of the blood vessel. More people die from CVDs worldwide than from any other cause: over 17.9 million every year, according to the World Health Organization. Of these deaths, 80% are due to coronary heart diseases (eg heart attack) and cerebrovascular diseases (eg strokes) and mostly affect low- and middle-income countries.</p>
+<p>Did you know that your heart is the size of your fist and the strongest muscle in your body? It started beating about three weeks after you were conceived. If you live to be 70, it will have beaten two and a half billion times. However, although impressive and strong, your heart can also become vulnerable from habitual risk factors like smoking, eating an unhealthy diet or putting it under stress. Controlling these key risk factors and monitoring your blood pressure regularly may reduce an individual’s risk of CVD.
+</p>
+<center>
+<img src="https://ourworldindata.org/grapher/exports/cardiovascular-disease-death-rates.svg">
+</center>
+</div>
+<div>
+<h3<i><b>Keep your heart healthy</b></i></h3>
+<p>To help prevent heart disease, you can:</p>
+<li>Eat healthy.
+    <li>  Get active.</li>
+        <li> Stay at a healthy weight.</li>
+            <li>Quit smoking and stay away from secondhand smoke.</li>
+                <li>Control your cholesterol and blood pressure.</li>
+                    <li>Drink alcohol only in moderation.</li>
+                        <li>Manage stress.</li>
+</div>
+<div>
+<h2><i class="fas fa-heartbeat"></i> Arrithmiya </h2>
+<img src="data:image/png;base64,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">
+<p>
+    Heart rhythm problems (heart arrhythmias) occur when the electrical impulses that coordinate your heartbeats don't work properly, causing your heart to beat too fast, too slow or irregularly.</p>
+
+    Heart arrhythmias (uh-RITH-me-uhs) may feel like a fluttering or racing heart and may be harmless. However, some heart arrhythmias may cause bothersome — sometimes even life-threatening — signs and symptoms.</p>
+    
+    Heart arrhythmia treatment can often control or eliminate fast, slow or irregular heartbeats. In addition, because troublesome heart arrhythmias are often made worse — or are even caused — by a weak or damaged heart, you may be able to reduce your arrhythmia risk by adopting a heart-healthy lifestyle.</p>
+
+</div>
+
+{% endblock %}
